@@ -206,6 +206,9 @@ nav {
 }
 
 .modal-btn {
+  border: 0;
+  margin: 0;
+  padding: 10px 32px;
   background-color: var(--accent-text-color);
   min-width: 200px;
   min-height: 50px;
