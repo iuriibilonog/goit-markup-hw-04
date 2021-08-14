@@ -139,12 +139,53 @@ nav {
 .contacts-item:not(:last-child) {
   margin-right: 50px;
 }
+
+.contacts-item .link {
+  display: flex;
+  align-items: center;
+}
+
+.contacts-item:focus {
+  color: var(--accent-text-color);
+}
+
+.header-icon-mail,
+.header-icon-phone {
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+.header-icon-mail:hover {
+  fill: var(--accent-text-color);
+}
+
+.header-icon-mail:focus {
+  fill: var(--accent-text-color);
+}
+
+.header-icon-phone:hover {
+  fill: var(--accent-text-color);
+}
+
+.header-icon-phone:focus {
+  fill: var(--accent-text-color);
+}
+
 /* ========= End Header ========= */
 
 /* ======== Hero ======== */
 
 .hero {
-  background-color: #2f303a;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../img/hero/hero-bg.jpg');
+  background-color: #c4c4c4;
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
@@ -169,6 +210,7 @@ nav {
   min-width: 200px;
   min-height: 50px;
   border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
 
@@ -203,6 +245,14 @@ nav {
 .benefits {
   padding-top: 94px;
   padding-bottom: 94px;
+}
+
+.benefits-icon-thumb {
+  background-color: #f5f4fa;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .benefits-list {
@@ -272,6 +322,7 @@ nav {
 .our-team {
   padding-top: 94px;
   padding-bottom: 94px;
+  background-color: #f5f4fa;
 }
 
 .our-team-list {
@@ -285,6 +336,9 @@ nav {
   margin-top: 30px;
   margin-left: 30px;
   width: calc((100% - 120px) / 4);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .our-team-item-desc {
@@ -309,10 +363,84 @@ nav {
   text-align: center;
 }
 
+.social-links-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.social-links-item-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links-items:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-links-icon {
+  width: 20px;
+  height: 20px;
+  fill: #afb1b8;
+}
+
+.social-links-item-link:hover {
+  background-color: var(--accent-text-color);
+}
+
+.social-links-item-link:hover .social-links-icon {
+  fill: var(--white-text-color);
+}
+
+/* ========= Our Clients ========= */
+
+.our-clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.our-clients-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.our-clients-links {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+
+.our-clients-icon {
+  fill: #afb1b8;
+}
+
+.our-clients-links:hover {
+  border: 1px solid var(--accent-text-color);
+}
+
+.our-clients-links:hover .our-clients-icon {
+  fill: var(--accent-text-color);
+}
+
 /* Footer */
 
 footer {
   background-color: #2f303a;
+}
+
+.footer {
+  display: flex;
 }
 
 .container.footer {
@@ -360,6 +488,48 @@ footer .footer-contacts:focus {
   color: var(--accent-text-color);
 }
 
+.footer-info {
+  max-width: 231px;
+}
+
+.connection {
+  margin-left: 70px;
+  padding-top: 12px;
+}
+
+.connection-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.social-links-icon-footer {
+  width: 20px;
+  height: 20px;
+  fill: var(--white-text-color);
+}
+
+.social-links-item-link-footer {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links-item-link-footer:hover .social-links-icon-footer {
+  fill: var(--white-text-color);
+}
+
+.social-links-item-link-footer:hover {
+  background-color: var(--accent-text-color);
+}
+
 /* СТИЛИ ДЛЯ ПОРТФОЛИО */
 
 /* Не прописывал стили для header и footer, так как
@@ -387,23 +557,36 @@ footer .footer-contacts:focus {
 /* Buttons */
 
 .filter-portfolio-btn {
+  margin: 0;
+  border: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 22px;
+  padding-left: 22px;
   font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
-  cursor: pointer;
+  border-radius: 4px;
+  background: #f5f4fa;
 }
 
 .filter-portfolio-btn:hover {
   background-color: var(--accent-text-color);
   color: var(--white-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .filter-portfolio-btn:focus {
   background-color: var(--accent-text-color);
   color: var(--white-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 }
 
 .projects-list {
@@ -417,6 +600,19 @@ footer .footer-contacts:focus {
   margin-top: 30px;
   margin-left: 30px;
   width: calc((100% - 90px) / 3);
+  background-color: var(--white-text-color);
+}
+
+.projects-list-item:hover {
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.projects-list-item:focus {
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* .projects-list-item:not(:nth-last-child(-n + 3)) {
